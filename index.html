@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cal.css">
+    <script src="cal.js"></script>
+    <title>ruthe calcular</title>
+    <link rel="stylesheet" href="stylecal.css">
+</head>
+<body>
+    <div id="main">
+        <h1>calculator</h1>
+        <input type="text" id="dis">
+        <div id="btn-div">
+            <button onclick="clr()" id="btn">c</button>
+            <button id="btn1" onclick="on('%')">%</button>
+            <button id="btn1" onclick="on('**')">^</button>
+            <div id="btn2">
+                <button id="btn1" onclick="on(7)">7</button>
+                <button id="btn1" onclick="on(8)">8</button>
+                <button id="btn1" onclick="on(9)">9</button>
+                <button id="btn1" onclick="on('/')">/</button>
+            </div>
+            <div id="btn2">
+                <button id="btn1" onclick="on(4)">4</button>
+                <button id="btn1" onclick="on(5)">5</button>
+                <button id="btn1" onclick="on(6)">6</button>
+                <button id="btn1" onclick="on('*')">*</button>
+            </div>
+            <div id="btn2">
+                <button id="btn1" onclick="on(1)">1</button>
+                <button id="btn1" onclick="on(2)">2</button>
+                <button id="btn1" onclick="on(3)">3</button>
+                <button id="btn1" onclick="on('-')">-</button>
+            </div>
+            <div id="btn2">
+                <button id="btn1" onclick="on('.')">.</button>
+                <button id="btn1" onclick="on(0)">0</button>
+                <button id="btn1" onclick="on('+')">+</button>
+                <button id="btn1" onclick="cal('=')">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function on(val) {
+        document.getElementById("dis").value = document.getElementById("dis").value + val;
+
+    }
+    function clr() {
+        document.getElementById("dis").value = ""
+
+    }
+    function cal() {
+        var user = document.getElementById("dis").value;
+        var res = eval(user);
+        document.getElementById("dis").value = res;
+    }
+</script>
+
+</html>
